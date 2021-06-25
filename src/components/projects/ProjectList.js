@@ -7,17 +7,17 @@ const ProjectList = () => {
             <ProjectSummary 
                 id={1}
                 title="Project Title" 
-                description="Posted by Babatunde" 
+                content="Posted by Babatunde" 
                 date="3rd September, 2am" />
             <ProjectSummary 
                 id={1}
                 title="Project Title" 
-                description="Posted by Babatunde" 
+                content="Posted by Babatunde" 
                 date="3rd September, 2am" />
             <ProjectSummary 
                 id={1}
                 title="Project Title" 
-                description="Posted by Babatunde" 
+                content="Posted by Babatunde" 
                 date="3rd September, 2am" />
         </div>
     )

@@ -23,7 +23,6 @@ const SignIn = () => {
                     <input id="password" type="password" onChange={handleChange} />
                 </div>
                 <div className="input-field">
-                    <label htmlFor="email">Email</label>
                     <button className="btn pink lighten-1 z-depth-0">Login</button>
                 </div>
             </form>
