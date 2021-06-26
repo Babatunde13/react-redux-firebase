@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import rootReducer from './store/reducers/rootReducer'
-import {addProject} from './store/actions/projects'
+import projectAction from './store/actions/projects'
 import reportWebVitals from './reportWebVitals';
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
@@ -14,8 +14,7 @@ const store = createStore(
   rootReducer,
   applyMiddleware(sagaMiddleware)
 )
-sagaMiddleware.run(addProject)
-
+sagaMiddleware.run(projectAction)
 ReactDOM.render(
   <Provider store={store}>
     <App />

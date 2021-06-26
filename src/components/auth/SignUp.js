@@ -13,7 +13,6 @@ const SignUp = () => {
     const handleChange =e => {
         const {id, value} = e.target
         setSignUpData({...signUpData, [id]: value})
-        console.log(signUpData)
     }
     return (
         <div className="container">

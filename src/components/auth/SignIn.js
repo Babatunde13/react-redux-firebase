@@ -8,7 +8,6 @@ const SignIn = () => {
     const handleChange =e => {
         const {id, value} = e.target
         setSignInData({...signInData, [id]: value})
-        console.log(signInData)
     }
     return (
         <div className="container">

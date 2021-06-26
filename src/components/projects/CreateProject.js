@@ -1,31 +1,33 @@
 import React, {useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useHistory } from "react-router-dom";
+import firebase from '../../config/fb.config'
 
 const CreateProject = () => {
+    const projectCollection = firebase.firestore().collection('projects')
     const dispatch = useDispatch()
     const history = useHistory()
-    const projects = useSelector(state => state.projects)
     const [CreateProjectData, setCreateProjectData] = useState({
-        id: projects.length+1, 
         title: '', 
         content: ''
     })
 
     const submit = e => {
         e.preventDefault();
-        console.log(projects)
-        dispatch({
-            type: 'ADD_PROJECT', 
-            project: CreateProjectData
+        projectCollection.add({
+            ...CreateProjectData, authorFirstName: 'Babatunde', authorLastName: 'Koiki', authorId: '12345',
+            createdAt: new Date()
+        }).then(project => {    
+            dispatch({
+                type: 'ADD_PROJECT', 
+                project: CreateProjectData
+            })
         })
-        console.log(projects)
         history.push('/')
     }
     const handleChange =e => {
         const {id, value} = e.target
         setCreateProjectData({...CreateProjectData, [id]: value})
-        console.log(CreateProjectData)
     }
     return (
         <div className="container">

@@ -1,15 +1,15 @@
 import { put, takeLatest, all } from 'redux-saga/effects'
 
-const delay = (ms) => new Promise(res => setTimeout(res, ms))
-
 function* addProjectAsync(project) {
-    // add to dB
-   yield delay(1000);
-    // update state
-    yield put({
-        type: 'ADD_PROJECT_ASYNC',
-        project
-    })
+    try {
+        // update state
+        yield put({
+            type: 'ADD_PROJECT_ASYNC',
+            project
+        })
+    } catch (error) {
+        console.log(error.message)
+    }
 }
 
 export function* addProject (project) {
@@ -17,8 +17,6 @@ export function* addProject (project) {
 }
 
 function* deleteProjectAsync(project) {
-    // add to dB
-   yield delay(1000000);
     // update state
     yield put({
         type: 'DELETE_PROJECT_ASYNC',

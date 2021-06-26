@@ -9,7 +9,6 @@ const projectReducer = (state=initState, action) => {
         case 'ADD_PROJECT':
             return [action.project, ...state]
         case 'DELETE_PROJECT':
-            console.log(state.filter(project => project.id !== action.project.id))
             return state.filter(project => project.id !== action.project.id)
         case 'EDIT_PROJECT':
             return state.map(project => project.id === action.project.id ? action.project : project)
