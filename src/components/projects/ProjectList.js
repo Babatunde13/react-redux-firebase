@@ -4,9 +4,16 @@ import ProjectSummary from './ProjectSummary'
 
 const ProjectList = () => {
     const dispatch = useDispatch()
-    const {projects} = useSelector(state => state.projects)
+    const projects = useSelector(state => state.projects)
     const add = () => {
-        dispatch({type: 'ADD_PROJECT', project: {id: projects.length+1, title: 'egg hunt with babs'+projects.length, content: 'blah blah blah'}})
+        dispatch({
+            type: 'ADD_PROJECT', 
+            project: {
+                id: projects.length+1, 
+                title: 'egg hunt with babs - '+projects.length, 
+                content: 'blah blah blah'
+            }
+        })
     }
     return (
         <div className="project-list section">
