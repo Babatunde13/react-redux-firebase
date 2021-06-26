@@ -13,10 +13,10 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Dashboard} />
+          <Route exact path="/project/create" component={CreateProject} />
           <Route exact path="/project/:id" component={ProjectDetails} />
           <Route exact path="/auth/login" component={SignIn} />
           <Route exact path="/auth/register" component={SignUp} />
-          <Route exact path="/project/create" component={CreateProject} />
         </Switch>
       </div>
     </BrowserRouter>
