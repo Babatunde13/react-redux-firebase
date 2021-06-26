@@ -13,13 +13,12 @@ function* addProjectAsync(project) {
 }
 
 export function* addProject (project) {
-    console.log(project)
     yield takeLatest('ADD_PROJECT', addProjectAsync(project))
 }
 
 function* deleteProjectAsync(project) {
     // add to dB
-//    yield delay(1000);
+   yield delay(1000000);
     // update state
     yield put({
         type: 'DELETE_PROJECT_ASYNC',
@@ -28,7 +27,6 @@ function* deleteProjectAsync(project) {
 }
 
 function* deleteProject (project) {
-    console.log(project)
     yield takeLatest('DELETE_PROJECT', deleteProjectAsync(project))
 }
 
