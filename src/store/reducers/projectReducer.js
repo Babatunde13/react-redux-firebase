@@ -8,6 +8,9 @@ const projectReducer = (state=initState, action) => {
     switch (action.type) {
         case 'ADD_PROJECT':
             return [action.project, ...state]
+        case 'ADD_PROJECT_ERROR':
+            console.log(action)
+            break;
         case 'DELETE_PROJECT':
             return state.filter(project => project.id !== action.project.id)
         case 'EDIT_PROJECT':

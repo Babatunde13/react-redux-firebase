@@ -22,6 +22,11 @@ const CreateProject = () => {
                 type: 'ADD_PROJECT', 
                 project: CreateProjectData
             })
+        }).catch(error => {
+            dispatch({
+                type: 'ADD_PROJECT_ERROR', 
+                project: error.message
+            })
         })
         history.push('/')
     }
