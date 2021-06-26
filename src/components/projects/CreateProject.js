@@ -20,7 +20,7 @@ const CreateProject = () => {
         }).then(project => {    
             dispatch({
                 type: 'ADD_PROJECT', 
-                project: CreateProjectData
+                project: {id: project.id, ...CreateProjectData}
             })
         }).catch(error => {
             dispatch({

@@ -16,6 +16,23 @@ export function* addProject (project) {
     yield takeLatest('ADD_PROJECT', addProjectAsync(project))
 }
 
+// function* getProjectsAsync(projects) {
+//     console.log(projects)
+//     try {
+//         // update state
+//         yield put({
+//             type: 'GET_PROJECTS_ASYNC',
+//             projects
+//         })
+//     } catch (error) {
+//         console.log(error.message)
+//     }
+// }
+
+// export function* getProjects(projects) {
+//     yield takeEvery('GET_PROJECTS', getProjectsAsync(projects))
+// }
+
 function* deleteProjectAsync(project) {
     // update state
     yield put({
@@ -31,6 +48,7 @@ function* deleteProject (project) {
 export default function* rootSaga() {
   yield all([
     addProject,
+    // getProjects,
     deleteProject
   ])
 }
