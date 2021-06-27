@@ -4,7 +4,7 @@ import ProjectSummary from './ProjectSummary'
 import firebase from "../../config/fb.config";
 
 const ProjectList = () => {
-    const  projects = useSelector(state => state.projects)
+    const  projects = useSelector(state => state)
     const projectCollection = firebase.firestore().collection('projects')
     console.log(projects)
     const dispatch = useDispatch()
@@ -26,7 +26,7 @@ const ProjectList = () => {
     
     return (
         <div className="project-list section">
-            {projects && projects.map(project => <ProjectSummary
+            {projects.length > 0 && projects.map(project => <ProjectSummary
                 key={project.id}
                 id={project.id}
                 title={project.title}

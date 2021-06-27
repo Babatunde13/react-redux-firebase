@@ -1,6 +1,7 @@
 let initState = []
 
 const projectReducer = async (state=initState, action) => {
+    console.log(state)
     switch (action.type) {
         case 'ADD_PROJECT':
             return [action.project, ...state]
