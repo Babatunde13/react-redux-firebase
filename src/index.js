@@ -3,18 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import rootReducer from './store/reducers/rootReducer'
-import projectAction from './store/actions/projects'
 import reportWebVitals from './reportWebVitals';
-import { createStore, applyMiddleware } from "redux";
+import { createStore, /*applyMiddleware */} from "redux";
 import { Provider } from "react-redux";
-import createSagaMiddleware from 'redux-saga'
+// import projectAction from './store/actions/projects'
+// import createSagaMiddleware from 'redux-saga'
 
-const sagaMiddleware = createSagaMiddleware()
+// const sagaMiddleware = createSagaMiddleware()
 const store = createStore(
-  rootReducer,
-  applyMiddleware(sagaMiddleware)
+  rootReducer
 )
-sagaMiddleware.run(projectAction)
+// sagaMiddleware.run(projectAction)
 ReactDOM.render(
   <Provider store={store}>
     <App />
